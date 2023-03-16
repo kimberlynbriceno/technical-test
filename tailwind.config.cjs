@@ -2,7 +2,17 @@
 module.exports = {
   content: ["./index.html", "./src/**/*.jsx"],
   theme: {
-    extend: {},
+    extend: {
+      colors:{
+        rose:{
+          500:'#fc758c'
+        }
+      },
+    },
+    fontFamily:{
+      abc:['Montserrat', 'sans-serif'],
+      dfg:[ 'Questrial', 'sans-serif'],
+    }
   },
   plugins: [],
 }
