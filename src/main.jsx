@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom/client'
 import './index.css'
 import { createBrowserRouter, RouterProvider}from 'react-router-dom'
 import Layout from './components/Layout'
-import Form from './page/Form'
 import Index from './page/Index'
+import NewClient from './page/NewClient'
 
 const router = createBrowserRouter([
   {
@@ -17,7 +17,7 @@ const router = createBrowserRouter([
       },
       {
       path:'/formulario',
-      element: <Form/>
+      element: <NewClient/>
     }]
 },
 ])

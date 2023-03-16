@@ -1,30 +1,38 @@
+import React,{useState} from "react"
 import { Outlet,Link } from "react-router-dom"
 import { useNavigate} from 'react-router-dom'
-import IconSearch from '../img/search.svg'
+import IconS from '../img/search.svg'
+import Logo from '../img/Diseño sin título.svg'
 
- 
+
 const Layout = () => {
+  const [isMobile, setIsMobile] = useState (false);
+
+
   return (
     <div className="">
-        <nav className=" w-full fixed top-0 left-0 bg-white">
-            <div className="md:flex py-4 md:px-10 px-7 items-center justify-between">
-            <div className=" text-3xl flex items-center cursor-pointer font-abc ">
-               <span className="mr-1 pt-2"></span> SNEAK 
+        <nav className="flex items-center p-6 flex-wrap justify-between bg-white">
+            <div className="flex items-center flex-shrink-0 mr-6 font-abc ">
+              <p className="fill-current h-8 w-8 mr-2 ml-2"> <img className="w-8 h-15 block mt-2 md:ml-4 lg:inline-block lg:mt-0" src={Logo} alt="LOGO" /></p>
+               <span className="text-3xl tracking-tight ml-4">SNEAK</span>  
             </div>
-         
-            <ul className="md:flex md:items-center m-3 font-dfg">
-                <Link className="md:ml-5 text-ml bg-rose-500 p-2"   to="/">All</Link>
-                <Link className="md:ml-5 text-ml p-2"to="/formulario">form</Link>
-                <li className="md:ml-5 text-ml">Branding</li>
-                <li className="md:ml-5 text-ml">Web</li>
-                <li className="md:ml-5 text-ml">Photografy</li>
-                <li className="md:ml-5 text-ml">App</li>
-                <li className="md:ml-5 text-ml"></li>
-                
-            </ul>
+            <div className="block lg:hidden">
+              <Link to='' className="flex items-center px-3 py-2 rounded border text-rose-500 ">
+              </Link>
+            </div>
+            <div className="w-full block lg:flex lg:items-center lg:w-auto"> 
+                <div className="lg:flex-grow lg:items-center m-3 font-dfg">
+                     <Link className="block mt-4 md:ml-4 lg:inline-block lg:mt-0 text-ml bg-rose-500 p-2"   to="/">All</Link>
+                     <Link className="block mt-4 md:ml-4 lg:inline-block lg:mt-0 text-ml p-2"to="/formulario">form</Link>
+                     <p className="block mt-4 md:ml-4 lg:inline-block lg:mt-0 text-ml">Branding</p>
+                     <p className="block mt-4 md:ml-4 lg:inline-block lg:mt-0 text-ml">Web</p>
+                     <p className="block mt-4 md:ml-4 lg:inline-block lg:mt-0 text-ml">Photografy</p>
+                     <p className="block mt-4 md:ml-4 lg:inline-block lg:mt-0 text-ml">App</p>
+                     <p className="block mt-4 md:ml-4 lg:inline-block lg:mt-0 text-ml"><img className= "w-7 h-9 block mt-4 md:ml-4 lg:inline-block lg:mt-0 text-ml" src={IconS} alt="ICONO" /></p>
+                 </div>
             </div>
         </nav>
-        <main className="md:h-screen overflow-scroll">
+        <main className="md:h-screen">
             <Outlet/>
         </main>
         
