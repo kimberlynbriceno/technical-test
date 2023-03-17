@@ -1,12 +1,16 @@
+import {useEffect} from 'react'
 import FormB from "../components/FormB"
 import {useNavigate, Form, useActionData} from 'react-router-dom'
 import Error from "../components/Error"
+
 
 
 export async function action({request}){
     const formData = await request.formData()
      const datos = Object.fromEntries(formData)
      const email= formData.get('email')
+
+     localStorage.setItem('datos', JSON.stringify(datos));
 
       let regex = new RegExp("([!#-'*+/-9=?A-Z^-~-]+(\.[!#-'*+/-9=?A-Z^-~-]+)*|\"\(\[\]!#-[^-~ \t]|(\\[\t -~]))+\")@([!#-'*+/-9=?A-Z^-~-]+(\.[!#-'*+/-9=?A-Z^-~-]+)*|\[[\t -Z^-~]*])");
 
@@ -22,6 +26,8 @@ export async function action({request}){
     if(Object.keys(errores).length){
       return errores 
     }
+    console.log(datos)
+
 return('desdeaction')
 }
 
@@ -32,7 +38,8 @@ const NewClient = () => {
   const navegate = useNavigate()
   const errores = useActionData()
 
-console.log(errores)
+console.log(typeof(errores))
+ 
 
 
   return (
@@ -46,7 +53,7 @@ console.log(errores)
     <p className="font-bold text-2xl text-rose-500 m-5 text-center">Form</p>
 
 
-    {errores?.length && errores.map((error, i) => <Error key={i}>{error}</Error>)}
+    {/* {errores?.length && errores.map((error, i) => <Error key={i}>{error}</Error>)} */}
 
 
       <Form

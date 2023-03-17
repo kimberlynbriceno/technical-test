@@ -2,6 +2,10 @@ import {Link} from 'react-router-dom'
 import Uno from '../img/one.jpg'
 import Dos from '../img/two.jpg'
 import Tres from '../img/tree.jpg'
+import Four from  '../img/four.jpg'
+import Five from '../img/five.jpg'
+import Six from '../img/six.jpg'
+import Seven from '../img/seven.jpg'
 import equal from '../img/equal.svg'
 import apps from '../img/apps.svg'
 
@@ -39,25 +43,30 @@ const Index = () => {
       <div className="grid grid-col-1 sm:grid-cols-3 gap-3 my-3">
         <div className="bg-slate-400 max-w-sm rounded overflow-hidden gap-3 object-contain">
           <img className='' src={Tres} alt="" />
-          <img src="https://source.unsplash.com/random" alt="" />
+          <img src={Six} alt="" />
 
         </div>
         <div className="bg-slate-400 max-w-sm rounded overflow-hidden">
-          <img src="https://source.unsplash.com/random" alt="" />
+          <img src={Seven} alt="" />
         </div> 
         <div className="bg-slate-400 max-w-sm rounded overflow-hidden">
           <img className="w-full" src={Dos} alt="" />
+          <img src={Five} alt="" />
+
         </div>
       </div>
       <div className="grid grid-col-1 sm:grid-cols-3 gap-3 my-3">
         <div className="bg-slate-400 max-w-sm rounded overflow-hidden">
-          <img src="https://source.unsplash.com/random" alt="" />
+          <img src={Four} alt="" />
+          <img src={Five} alt="" />
         </div>
         <div className="bg-slate-400 max-w-sm rounded overflow-hidden">
           <img src="https://source.unsplash.com/random" alt="" />
         </div> 
         <div className="bg-slate-400 max-w-sm rounded overflow-hidden">
           <img className="w-full" src={Uno} alt="" />
+          <img src={Six} alt="" />
+
         </div>
       </div>
     </div>
