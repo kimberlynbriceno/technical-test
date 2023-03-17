@@ -1,7 +1,13 @@
 import FormB from "../components/FormB"
 import {useNavigate, Form } from 'react-router-dom'
 
+export async function action({request}){
+    const formData = await request.formData()
 
+     const datos = Object.fromEntries(formData)
+     console.log(datos)
+      return datos
+}
 
 
 const NewClient = () => {
@@ -18,7 +24,8 @@ const NewClient = () => {
 
 
 
-      <Form>
+      <Form
+      method='post'>
 
       <FormB/>
             < input 

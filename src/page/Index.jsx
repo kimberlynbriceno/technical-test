@@ -4,6 +4,8 @@ import Uno from '../img/una.jpg'
 import Dos from '../img/dos.jpg'
 import Tres from '../img/tres.jpg'
 
+<></>
+
 const Index = () => {
   return (
     <>
@@ -12,7 +14,7 @@ const Index = () => {
     </div>
 
 <div>
-  <div className="container mx-8 my-8 mt-5 text-center object-cover">
+  <div className="container mx-auto mt-5 text-center object-cover">
 
       <div className="grid grid-col-1 sm:grid-cols-3 gap-3 my-3">
         <div className="bg-slate-400 max-w-sm rounded overflow-hidden">
