@@ -1,10 +1,10 @@
 import {Link} from 'react-router-dom'
 import IconS from '../img/search.svg'
-import Uno from '../img/una.jpg'
-import Dos from '../img/dos.jpg'
-import Tres from '../img/tres.jpg'
+import Uno from '../img/one.jpg'
+import Dos from '../img/two.jpg'
+import Tres from '../img/tree.jpg'
 
-<></>
+
 
 const Index = () => {
   return (
