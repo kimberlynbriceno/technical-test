@@ -34,7 +34,7 @@ const Layout = () => {
             <div className={isMobile ? ("w-full block lg:flex sm:items-center text-center lg:w-auto") : ("w-full lg:flex lg:items-center lg:w-auto hidden")}> 
                 <div className="lg:flex-grow lg:items-center m-3 font-dfg">
                      <Link className="block mt-4 md:ml-4 lg:inline-block lg:mt-0 text-ml bg-rose-500 p-2"   to="/">All</Link>
-                     <Link className="block mt-4 md:ml-4 lg:inline-block lg:mt-0 text-ml p-2"to="/formulario">form</Link>
+                     <Link className="block mt-4 md:ml-4 lg:inline-block lg:mt-0 text-ml p-2"to="/formulario">Contact</Link>
                      <p className="block mt-4 md:ml-4 lg:inline-block lg:mt-0 text-ml">Branding</p>
                      <p className="block mt-4 md:ml-4 lg:inline-block lg:mt-0 text-ml">Web</p>
                      <p className="block mt-4 md:ml-4 lg:inline-block lg:mt-0 text-ml">Photografy</p>
