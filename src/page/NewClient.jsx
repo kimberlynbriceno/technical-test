@@ -4,12 +4,12 @@ import Error from "../components/Error";
 
 export async function action({ request }) {
   const formData = await request.formData();
-  const data = Object.fromEntries(formData);
+  const dataObject = Object.fromEntries(formData);
 
   const email = formData.get("email");
-  const datos = JSON.parse(localStorage.getItem("datos")) ?? [];
-  datos.push(data);
-  localStorage.setItem("datos", JSON.stringify(datos));
+  const data = JSON.parse(localStorage.getItem("data")) ?? [];
+  data.push(dataObject);
+  localStorage.setItem("data", JSON.stringify(data));
 
   console.log(email);
   let regex = new RegExp(
@@ -19,7 +19,7 @@ export async function action({ request }) {
   // validacion del form
   const errores = [];
 
-  if (Object.values(data).includes("")) {
+  if (Object.values(dataObject).includes("")) {
     errores.push("todos los campos son obligatorio");
   }
   if (!regex.test(email)) {
@@ -28,7 +28,7 @@ export async function action({ request }) {
   if (Object.keys(errores).length) {
     return errores;
   }
-  console.log(datos);
+  console.log(data);
 
   return "desdeaction";
 }
