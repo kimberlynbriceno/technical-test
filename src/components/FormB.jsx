@@ -3,15 +3,15 @@ const FormB = () => {
     <div>
       <>
         <div className="mb-4">
-          <label className="text-gray-800 font-bold" htmlFor="nombre">
-            Nombre:
+          <label className="text-gray-800 font-bold" htmlFor="name">
+            Name:
           </label>
           <input
-            id="nombre"
+            id="name"
             type="text"
             className="mt-2 block w-full p-3 bg-white"
-            placeholder="Nombre del Cliente"
-            name="nombre"
+            placeholder="Name"   
+            name="name"
           />
         </div>
 
@@ -23,35 +23,34 @@ const FormB = () => {
             id="email"
             type="email"
             className="mt-2 block w-full p-3 bg-white"
-            placeholder="Email del Cliente"
+            placeholder="Email"
             name="email"
           />
         </div>
 
         <div className="mb-4">
-          <label className="text-gray-800 font-bold" htmlFor="telefono">
-            Teléfono:
+          <label className="text-gray-800 font-bold" htmlFor="phone">
+            Phone:
           </label>
           <input
-            id="telefono"
+            id="phone"
             type="tel"
             className="mt-2 block w-full p-3 bg-white"
-            placeholder="Teléfono del Cliente"
-            name="telefono"
+            placeholder="Phone"
+            name="phone"
           />
         </div>
 
         <div className="mb-4">
-          <label className="text-gray-800 font-bold" htmlFor="notas">
-            Notas:
+          <label className="text-gray-800 font-bold" htmlFor="note">
+            Note:
           </label>
           <textarea
-            as="textarea"
-            id="notas"
+            id="note"
             type="text"
             className="mt-2 block w-full p-3 bg-white h-40 align-self"
-            placeholder="Notas del Cliente"
-            name="notas"
+            placeholder="Give us a notez"
+            name="note"
           />
         </div>
       </>
