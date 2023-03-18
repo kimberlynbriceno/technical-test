@@ -11,7 +11,7 @@ export async function action({ request }) {
     "([!#-'*+/-9=?A-Z^-~-]+(.[!#-'*+/-9=?A-Z^-~-]+)*|\"([]!#-[^-~ \t]|(\\[\t -~]))+\")@([!#-'*+/-9=?A-Z^-~-]+(.[!#-'*+/-9=?A-Z^-~-]+)*|[[\t -Z^-~]*])"
   )
 
-  // validacion del form
+  // ! validacion del form y manejo de mensajes de error
   const msg = []
 
   if (Object.values(dataObject).includes("")) {
@@ -28,10 +28,10 @@ export async function action({ request }) {
   const data = JSON.parse(localStorage.getItem("data")) ?? []
   data.push(dataObject)
   localStorage.setItem("data", JSON.stringify(data))
-  // TODO RESET
+  
   document.getElementById("formId").reset();
 
-  msg.push("todo bien")
+  msg.push("Data sent successfully..!")
   
   if (msg.length) {
     return msg
