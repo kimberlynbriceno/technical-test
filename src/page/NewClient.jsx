@@ -1,6 +1,6 @@
 import FormB from "../components/FormB"
 import { useNavigate, Form, useActionData } from "react-router-dom"
-import Error from "../components/Error"
+import Message from "../components/Message"
 
 export async function action({ request }) {
   const formData = await request.formData()
@@ -12,32 +12,39 @@ export async function action({ request }) {
   )
 
   // validacion del form
-  const errores = []
+  const msg = []
 
   if (Object.values(dataObject).includes("")) {
-    errores.push("All fields are required")
+    msg.push("All fields are required")
   }
   if (!regex.test(email)) {
-    errores.push("Invalid email")
+    msg.push("Invalid email")
   }
-  if (Object.keys(errores).length) {
-    return errores
+  if (Object.keys(msg).length) {
+    return msg
   }
+  
 
   const data = JSON.parse(localStorage.getItem("data")) ?? []
   data.push(dataObject)
   localStorage.setItem("data", JSON.stringify(data))
-// TODO ACA DEBO RESETEAR EL FORM
+  // TODO RESET
+  document.getElementById("formId").reset();
+
+  msg.push("todo bien")
   
+  if (msg.length) {
+    return msg
+  }
+
 
   return"ok"
 }
 
 const NewClient = () => {
   const navegate = useNavigate()
-  const errores = useActionData()
+  const msg = useActionData()
 
-  console.log(typeof errores)
 
   return (
     <>
@@ -55,9 +62,9 @@ const NewClient = () => {
             Contact Form{" "}
           </p>
 
-          {Array.isArray(errores) ? errores.map((error, i) => <Error key={i}>{error}</Error>) : []}
+          {Array.isArray(msg) ? msg.map((message, i) => <Message key={i}>{message}</Message>) : []}
 
-          <Form method="post">
+          <Form id="formId" method="post">
             <FormB />
             <input
               type="submit"
